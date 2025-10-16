@@ -1,0 +1,387 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Donate - SNJANKALYAN</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/gijgo.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/slicknav.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<!-- header-start -->
+	<header>
+		<div class="header-area ">
+			<div class="header-top_area">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xl-6 col-md-12 col-lg-8">
+							<div class="short_contact_list">
+								<ul>
+									<li><a href="+919058398880"> <i class="fa fa-phone"></i> +91 90583 98880</a></li>
+									<li><a href="#"> <i class="fa fa-envelope"></i>s.nautiyalpabo@gmail.com</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-6 col-md-6 col-lg-4">
+							<div class="social_media_links d-none d-lg-block">
+								<a href="#">
+									<i class="fa fa-facebook"></i>
+								</a>
+								<a href="#">
+									<i class="fa fa-pinterest-p"></i>
+								</a>
+								<a href="#">
+									<i class="fa fa-linkedin"></i>
+								</a>
+								<a href="#">
+									<i class="fa fa-twitter"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="sticky-header" class="main-header-area">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-xl-3 col-lg-3">
+							<div class="logo">
+								<a href="index.html">
+									<!-- <img src="img/logo.png" alt=""> -->
+									<h2>SNJANKALYAN</h2>
+								</a>
+							</div>
+						</div>
+						<div class="col-xl-9 col-lg-9">
+							<div class="main-menu">
+								<nav>
+									<ul id="navigation">
+										<li><a href="index.html">Home</a></li>
+										<li><a href="About.html">About</a></li>
+										<li><a href="#">blog <i class="ti-angle-down"></i></a>
+											<ul class="submenu">
+												<li><a href="blog.html">blog</a></li>
+												<li><a href="single-blog.html">single-blog</a></li>
+											</ul>
+										</li>
+										<li><a href="#">pages <i class="ti-angle-down"></i></a>
+											<ul class="submenu">
+												<li><a href="elements.html">elements</a></li>
+												<li><a href="Cause.html">Cause</a></li>
+											</ul>
+										</li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</nav>
+								<div class="Appointment">
+									<div class="book_btn d-none d-lg-block">
+										<a data-scroll-nav='1' href="#">Make a Donate</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="mobile_menu d-block d-lg-none"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- header-end -->
+
+	<!-- donation form area -->
+	<div class="make_donation_area section_padding">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="section_title text-center mb-40">
+						<h3><span>Make a Donation</span></h3>
+						<p>Support our programs for health, education and community development. Fill the form below and upload your payment screenshot with the transaction UTR/Ref no.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<form id="donationForm" action="donate_submit.php" method="POST" enctype="multipart/form-data" class="donation_form">
+						<div class="form-group">
+							<label for="donorName">Full name</label>
+							<input id="donorName" name="name" type="text" class="form-control" placeholder="Your full name" required>
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="donorEmail">Email</label>
+								<input id="donorEmail" name="email" type="email" class="form-control" placeholder="you@example.com" required>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="donorPhone">Phone</label>
+								<input id="donorPhone" name="phone" type="tel" class="form-control" placeholder="Mobile number" required>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="amount">Amount (INR)</label>
+							<input id="amount" name="amount" type="number" min="1" class="form-control" placeholder="Enter amount" required>
+						</div>
+
+						<div class="form-group">
+							<label>Or quick select</label>
+							<div class="d-flex gap-2">
+								<button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('amount').value=100">₹100</button>
+								<button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('amount').value=500">₹500</button>
+								<button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('amount').value=1000">₹1000</button>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="utr">UTR / Transaction No.</label>
+							<input id="utr" name="utr" type="text" class="form-control" placeholder="Enter UTR / transaction reference" required>
+						</div>
+
+						<div class="form-group">
+							<label for="screenshot">Upload payment screenshot (PNG/JPG)</label>
+							<input id="screenshot" name="screenshot" type="file" accept="image/*" class="form-control-file" required>
+							<div class="mt-2">
+								<img id="screenshotPreview" src="" alt="Screenshot preview" style="max-width:100%;display:none;border:1px solid #ddd;padding:6px;border-radius:4px;">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="note">Note (optional)</label>
+							<textarea id="note" name="note" class="form-control" rows="3" placeholder="Any message or purpose of donation"></textarea>
+						</div>
+
+						<div class="form-group text-center mt-3">
+							<button type="submit" class="boxed-btn4">Submit Donation</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- UPI QR and instructions -->
+				<div class="col-lg-6">
+					<div class="card p-3">
+						<h5>Pay via UPI</h5>
+						<p>Scan the QR or use the UPI ID below to make a transfer, then enter the UTR/transaction reference above and upload the payment screenshot.</p>
+						<div class="text-center mb-3">
+							<!-- Placeholder QR image: replace img/upi_qr.png with your actual QR code -->
+							<img src="img/upi_qr.png" alt="UPI QR" id="upiQr" style="max-width:220px; width:100%; height:auto; border:1px solid #eee; padding:8px; background:#fff;">
+						</div>
+						<p class="text-center"><strong>UPI ID:</strong> snjankalyan@upi</p>
+						<p class="small text-muted">Tip: After payment, please keep the transaction screenshot and UTR for verification.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer_start  -->
+	<footer class="footer">
+		<div class="footer_top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-4 col-md-6 col-lg-4 ">
+						<div class="footer_widget">
+							<div class="footer_logo">
+								<a href="#">
+									<h1>SNJANKALYAN</H4>
+								</a>
+							</div>
+							<p class="address_text">Jan Kalyan Samiti, <br> Paabo Paudi Garhwal, <br> Uttarakhand, India
+                               
+							</p>
+							<div class="socail_links">
+								<ul>
+									<li>
+										<a href="#">
+											<i class="ti-facebook"></i>
+										</a>
+									</li>
+                                    
+									<li>
+										<a href="#">
+											<i class="fa fa-instagram"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-xl-2 col-md-6 col-lg-2">
+						<div class="footer_widget">
+							<h3 class="footer_title">
+								Services
+							</h3>
+							<ul class="links">
+								<li><a href="#">Donate</a></li>
+								<li><a href="#">Campaigns</a></li>
+								<li><a href="#">Member Apply</a></li>
+								<li><a href="#">Volunteer</a></li>
+								<li><a href="#">Partner</a></li>
+								<!-- <li><a href="#">Jobs</a></li> -->
+							</ul>
+						</div>
+					</div>
+					<div class="col-xl-3 col-md-6 col-lg-3">
+						<div class="footer_widget">
+							<h3 class="footer_title">
+								Contacts
+							</h3>
+							<div class="contacts">
+								<p>+91 90583 98880<br>
+									s.nautiyalpabo@gmail.com <br>
+									Main Market Pabau, Po-Pabau, Patti- Ghurdaursyun, Pauri Garhwal Uttarakhand 246164
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-md-6 col-lg-3">
+						<div class="footer_widget">
+							<h3 class="footer_title">
+								Agreements
+							</h3>
+							<ul class="news_links">
+								<li>
+                                   
+									<div class="info">
+										<a href="#">
+											<h4>Terms & Condition</h4>
+										</a>
+									</div>
+								</li>
+								<li>
+                                    
+									<div class="info">
+										<a href="#">
+											<h4>Privacy Policy</h4>
+										</a>
+                                        
+									</div>
+								</li>
+								<li>
+                                    
+									<div class="info">
+										<a href="#">
+											<h4>Disclaimer</h4>
+										</a>
+                                        
+									</div>
+								</li>
+								<li>
+                                    
+									<div class="info">
+										<a href="#">
+											<h4>Refund Policy</h4>
+										</a>
+                                        
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copy-right_text">
+			<div class="container">
+				<div class="row">
+					<div class="bordered_1px "></div>
+					<div class="col-xl-12">
+						<p class="copy_right text-center">
+						<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> All rights reserved | JANKALYAN | Developed with <i class="ti-heart" aria-hidden="true"></i> by <a
+								href="https://agnivridhiindia.com" target="_blank">Agnvridhi India</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer_end  -->
+
+	<!-- JS here -->
+	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+	<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="js/ajax-form.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/jquery.counterup.min.js"></script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/scrollIt.js"></script>
+	<script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/nice-select.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/plugins.js"></script>
+	<script src="js/gijgo.min.js"></script>
+	<!--contact js-->
+	<script src="js/contact.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.form.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/mail-script.js"></script>
+
+	<script src="js/main.js"></script>
+
+	<script>
+	// Screenshot preview
+	(function(){
+		var input = document.getElementById('screenshot');
+		var preview = document.getElementById('screenshotPreview');
+		if (!input) return;
+		input.addEventListener('change', function(e){
+			var file = input.files && input.files[0];
+			if (!file) { preview.style.display='none'; preview.src=''; return; }
+			if (!file.type.match('image.*')) { alert('Please upload an image file (png/jpg).'); input.value=''; return; }
+			var reader = new FileReader();
+			reader.onload = function(ev){
+				preview.src = ev.target.result;
+				preview.style.display = 'block';
+			}
+			reader.readAsDataURL(file);
+		});
+	})();
+
+	// Basic client-side form validation before submit
+	var donationForm = document.getElementById('donationForm');
+	if (donationForm) {
+		donationForm.addEventListener('submit', function(e){
+			var amount = document.getElementById('amount').value;
+			var utr = document.getElementById('utr').value.trim();
+			var screenshot = document.getElementById('screenshot').files.length;
+			if (!amount || Number(amount) <= 0) { alert('Please enter a valid donation amount.'); e.preventDefault(); return false; }
+			if (!utr) { alert('Please enter the UTR / transaction number.'); e.preventDefault(); return false; }
+			if (!screenshot) { alert('Please upload the payment screenshot.'); e.preventDefault(); return false; }
+			// allow submit (server should validate again)
+		});
+	}
+	</script>
+
+	</body>
+
+</html>
+
