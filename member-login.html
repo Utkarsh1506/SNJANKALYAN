@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Login - SNJ Ankalyan</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800|Yeseva+One&display=swap");
+        
+        body {
+            background: linear-gradient(135deg, #10d876 0%, #0fb562 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Open Sans", sans-serif;
+        }
+        .login-container {
+            max-width: 450px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .login-header {
+            background: linear-gradient(90deg, #10d876 0%, #0fb562 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .login-header h2 {
+            margin: 0;
+            font-size: 28px;
+            font-family: "Yeseva One", cursive;
+        }
+        .login-header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        .login-body {
+            padding: 40px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #191d34;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .form-control {
+            border: 2px solid #ECF0F1;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            border-color: #10d876;
+            box-shadow: 0 0 0 0.2rem rgba(16, 216, 118, 0.25);
+            outline: none;
+        }
+        .btn-login {
+            background: linear-gradient(90deg, #10d876 0%, #0fb562 100%);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            box-shadow: 0 5px 20px rgba(16, 216, 118, 0.3);
+        }
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 216, 118, 0.4);
+        }
+        .alert {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .alert-error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
+        .alert-success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
+        .login-footer {
+            text-align: center;
+            padding: 20px;
+            background: #F8F9FA;
+            border-top: 1px solid #ECF0F1;
+        }
+        .login-footer a {
+            color: #10d876;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+        .info-box {
+            background: #E8F8F0;
+            border-left: 4px solid #27AE60;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .info-box p {
+            margin: 5px 0;
+            color: #2C3E50;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2>👤 Member Login</h2>
+            <p>Access Your Dashboard</p>
+        </div>
+
+        <div class="login-body">
+            <div id="alertBox" class="alert"></div>
+
+            <div class="info-box">
+                <p><strong>📝 How to Login:</strong></p>
+                <p>• Enter your User ID (e.g., SNJ1001)</p>
+                <p>• Enter your Date of Birth</p>
+                <p>• Access your dashboard to view ID card and payment status</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>User ID</label>
+                    <input type="text" class="form-control" id="userId" name="userId" 
+                           placeholder="e.g., SNJ1001" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    🔓 Login to Dashboard
+                </button>
+            </form>
+        </div>
+
+        <div class="login-footer">
+            <p><a href="index.html">← Back to Home</a></p>
+            <p>Don't have an account? <a href="member.html">Register Now</a></p>
+            <p><a href="admin-login.html">Admin Login</a></p>
+        </div>
+    </div>
+
+    <script src="js/member-system.js"></script>
+    <script src="js/auth-system.js"></script>
+    <script>
+        // Handle login form
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const userId = document.getElementById('userId').value.trim();
+            const dob = document.getElementById('dob').value;
+
+            if (!userId || !dob) {
+                showAlert('error', 'Please enter both User ID and Date of Birth');
+                return;
+            }
+
+            const result = memberSystem.memberLogin(userId, dob);
+
+            if (result.success) {
+                // Store member session
+                localStorage.setItem('charity_session', JSON.stringify({
+                    userId: userId,
+                    role: 'member',
+                    loginTime: new Date().toISOString()
+                }));
+
+                showAlert('success', 'Login successful! Redirecting...');
+                setTimeout(function() {
+                    window.location.href = 'member-dashboard.html?userId=' + userId;
+                }, 1000);
+            } else {
+                showAlert('error', result.error || 'Login failed');
+            }
+        });
+
+        function showAlert(type, message) {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.className = 'alert alert-' + type;
+            alertBox.innerHTML = message;
+            alertBox.style.display = 'block';
+
+            if (type === 'success') {
+                setTimeout(function() {
+                    alertBox.style.display = 'none';
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>

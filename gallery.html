@@ -1,0 +1,522 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Gallery - SNJANKALYAN</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.3s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: all 0.3s;
+        }
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        .gallery-title {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .gallery-desc {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            margin: 5px 0 0 0;
+        }
+        .gallery-filters {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .gallery-filters button {
+            padding: 10px 25px;
+            margin: 5px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        .gallery-filters button:hover,
+        .gallery-filters button.active {
+            background: linear-gradient(90deg, #3cc78f 0%, #2cae79 100%);
+            color: white;
+            border-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-lg-8">
+                            <div class="short_contact_list">
+                                <ul>
+                                    <li><a href="+919058398880"> <i class="fa fa-phone"></i> +91 90583 98880</a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>s.nautiyalpabo@gmail.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-lg-4">
+                            <div class="social_media_links d-none d-lg-block">
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-pinterest-p"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <h2>SNJANKALYAN</h2>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="About.html">About</a>
+                                            <ul class="submenu">
+                                                <li><a href="About.html">About Us</a></li>
+                                                <li><a href="team.html">Our Team</a></li>
+                                                <li><a href="certifications.html">Certifications</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="idcard.html">ID Card Download</a></li>
+                                        <li><a href="#">More Pages<i class="ti-angle-down"></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="gallery.html">Gallery</a></li>
+                                                <li><a href="donors.html">List Of Donors</a></li>
+                                                <li><a href="problems.html">Your Problems</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <!-- Mobile-only menu items -->
+                                        <li class="d-lg-none"><a href="member-login.html">👤 Member Login</a></li>
+                                        <li class="d-lg-none"><a href="admin-login.html">🛡️ Admin Login</a></li>
+                                        <li class="d-lg-none"><a href="donate.html">💚 Make Donation</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a href="member-login.html" style="background: #3cc78f; margin-right: 10px;">👤 Member Login</a>
+                                        <a href="admin-login.html" style="background: #3cc78f; margin-right: 10px;">🛡️ Admin</a>
+                                        <a href="donate.html">Make Donation</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- bradcam_area_start  -->
+    <div class="bradcam_area breadcam_bg overlay d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Our Gallery</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end  -->
+
+    <!-- gallery_area_start  -->
+    <div class="section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_title text-center mb-55">
+                        <h3><span>Moments That Matter</span></h3>
+                        <p>A glimpse into our social welfare activities and community engagement programs</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Filters -->
+            <div class="gallery-filters">
+                <button class="active" data-filter="all">All Photos</button>
+                <button data-filter="events">Events</button>
+                <button data-filter="activities">Activities</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-category="events">
+                    <div class="gallery-item">
+                        <img src="img/causes/1.png" alt="Event">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Community Event</h4>
+                            <p class="gallery-desc">Annual social welfare program</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-category="activities">
+                    <div class="gallery-item">
+                        <img src="img/causes/2.png" alt="Activity">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Health Camp</h4>
+                            <p class="gallery-desc">Free medical checkup camp</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="col-lg-4 col-md-6" data-category="events">
+                    <div class="gallery-item">
+                        <img src="img/help/2.png" alt="Event">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Awareness Program</h4>
+                            <p class="gallery-desc">Social awareness campaign</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-category="activities">
+                    <div class="gallery-item">
+                        <img src="img/help/3.png" alt="Activity">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Education Drive</h4>
+                            <p class="gallery-desc">School supplies distribution</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="col-lg-4 col-md-6" data-category="events">
+                    <div class="gallery-item">
+                        <img src="img/banner/banner2.png" alt="Event">
+                        <div class="gallery-overlay">
+                            <h4 class="gallery-title">Annual Function</h4>
+                            <p class="gallery-desc">Yearly celebration</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <!-- Empty State -->
+            <div class="row" id="noResults" style="display: none;">
+                <div class="col-12">
+                    <div class="text-center" style="padding: 60px 20px;">
+                        <div style="font-size: 60px; margin-bottom: 20px;">📷</div>
+                        <h4 style="color: #191d34;">No photos found</h4>
+                        <p style="color: #5c5c5c;">Try selecting a different category</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- gallery_area_end  -->
+
+    <!-- footer_start  -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <h1>SNJANKALYAN</h1>
+                                </a>
+                            </div>
+                            <p class="address_text">Jan Kalyan Samiti, <br> Paabo Paudi Garhwal, <br> Uttarakhand, India
+                               
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Services
+                            </h3>
+                            <ul class="links">
+                                <li><a href="donate.html">Donate</a></li>
+                                <li><a href="Cause.html">Campaigns</a></li>
+                                <li><a href="member.html">Member Apply</a></li>
+                                <li><a href="team.html">Volunteer</a></li>
+                                <li><a href="idcard.html">ID Card Download</a></li>
+                                <li><a href="donors.html">List Of Donors</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Contacts
+                            </h3>
+                            <div class="contacts">
+                                <p>+91 90583 98880<br>
+                                    s.nautiyalpabo@gmail.com <br>
+                                    Main Market Pabau, Po-Pabau, Patti- Ghurdaursyun, Pauri Garhwal Uttarakhand 246164
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Agreements
+                            </h3>
+                            <ul class="news_links">
+                                <li>
+                                   
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Terms & Condition</h4>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Privacy Policy</h4>
+                                        </a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Disclaimer</h4>
+                                        </a>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Refund Policy</h4>
+                                        </a>
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px "></div>
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | JANKALYAN | Developed with <i class="ti-heart" aria-hidden="true"></i> by <a
+                                href="https://agnivridhiindia.com" target="_blank">Agnvridhi India</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_end  -->
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/gijgo.min.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/admin-content-manager.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Dynamic Gallery Loading Script -->
+    <script>
+        $(document).ready(function() {
+            const galleryData = ContentManager.Gallery.getAll();
+            const $galleryContainer = $('.gallery-filters').next('.row');
+            
+            if(galleryData && galleryData.length > 0) {
+                // Clear existing static content
+                $galleryContainer.empty();
+                
+                // Build gallery items from localStorage
+                galleryData.forEach(item => {
+                    const galleryHtml = `
+                        <div class="col-lg-4 col-md-6" data-category="${item.category}">
+                            <div class="gallery-item">
+                                <img src="${item.image}" alt="${item.title}">
+                                <div class="gallery-overlay">
+                                    <h4 class="gallery-title">${item.title}</h4>
+                                    <p class="gallery-desc">${item.description || ''}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    $galleryContainer.append(galleryHtml);
+                });
+                
+                // Reinitialize magnificPopup for new items
+                setTimeout(function() {
+                    $('.gallery-item').magnificPopup({
+                        type: 'image',
+                        delegate: 'img',
+                        gallery: {
+                            enabled: true
+                        }
+                    });
+                }, 100);
+            }
+        });
+    </script>
+
+    <!-- Gallery Filter Script -->
+    <script>
+        $(document).ready(function() {
+            $('.gallery-filters button').click(function() {
+                var filter = $(this).data('filter');
+                
+                // Update active button
+                $('.gallery-filters button').removeClass('active');
+                $(this).addClass('active');
+                
+                // Filter items
+                if (filter === 'all') {
+                    $('[data-category]').parent().fadeIn();
+                } else {
+                    $('[data-category]').parent().fadeOut();
+                    $('[data-category="' + filter + '"]').parent().fadeIn();
+                }
+                
+                // Check if any items visible
+                setTimeout(function() {
+                    var visible = $('[data-category]').parent(':visible').length;
+                    $('#noResults').toggle(visible === 0);
+                }, 400);
+            });
+
+            // Magnific Popup
+            $('.gallery-item').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

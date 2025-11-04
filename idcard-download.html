@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download ID Card - SNJ Ankalyan</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .download-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 30px;
+        }
+        .verification-box {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        .verification-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3498DB;
+        }
+        .verification-header h2 {
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #2C3E50;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .form-control {
+            border: 2px solid #ECF0F1;
+            border-radius: 5px;
+            padding: 12px;
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            border-color: #3498DB;
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+        .btn-verify {
+            background: linear-gradient(135deg, #3498DB, #2C3E50);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        .btn-verify:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        .btn-download {
+            background: linear-gradient(135deg, #27AE60, #229954);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+        .idcard-preview {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 40px;
+            display: none;
+        }
+        #idCardCanvas {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 2px solid #ECF0F1;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+        }
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .alert-success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
+        .alert-error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
+        .alert-warning {
+            background: #FFF3CD;
+            color: #856404;
+            border: 1px solid #FFEAA7;
+        }
+        .action-buttons {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .action-buttons button {
+            margin: 0 10px;
+        }
+        .info-box {
+            background: #E8F4F8;
+            border-left: 4px solid #3498DB;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .info-box h5 {
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="download-container">
+            <!-- Verification Section -->
+            <div class="verification-box" id="verificationSection">
+                <div class="verification-header">
+                    <h2>Download Your ID Card</h2>
+                    <p class="text-muted">Enter your credentials to verify and download</p>
+                </div>
+
+                <div class="info-box">
+                    <h5>📋 Instructions:</h5>
+                    <ul>
+                        <li>Enter your User ID received during registration (e.g., SNJ1001)</li>
+                        <li>Enter your Date of Birth for verification</li>
+                        <li>Your application must be approved by admin to download the ID card</li>
+                    </ul>
+                </div>
+
+                <div id="alertBox" class="alert"></div>
+
+                <form id="verificationForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>User ID</label>
+                                <input type="text" class="form-control" id="userId" name="userId" 
+                                       placeholder="e.g., SNJ1001" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" class="form-control" id="dob" name="dob" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-verify">Verify & Generate ID Card</button>
+                </form>
+
+                <div style="margin-top: 30px; text-align: center;">
+                    <p class="text-muted">Don't have a User ID? <a href="member-register.html">Register Now</a></p>
+                    <p class="text-muted"><a href="index.html">← Back to Home</a></p>
+                </div>
+            </div>
+
+            <!-- ID Card Preview Section -->
+            <div class="idcard-preview" id="idcardSection">
+                <div class="verification-header">
+                    <h2>Your ID Card</h2>
+                    <p class="text-muted">Ready to download</p>
+                </div>
+
+                <canvas id="idCardCanvas"></canvas>
+
+                <div class="action-buttons">
+                    <button class="btn-download" onclick="downloadIDCard()">
+                        📥 Download ID Card
+                    </button>
+                    <button class="btn-verify" style="background: linear-gradient(135deg, #95A5A6, #7F8C8D); width: auto;" 
+                            onclick="resetForm()">
+                        🔄 Verify Another ID
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/member-system.js"></script>
+    <script src="js/idcard-generator.js"></script>
+    <script>
+        let currentMember = null;
+        let idCardGen = null;
+
+        // Handle verification form submission
+        document.getElementById('verificationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const userId = document.getElementById('userId').value.trim();
+            const dob = document.getElementById('dob').value;
+
+            // Verify member credentials
+            const result = memberSystem.verifyMember(userId, dob);
+
+            if (result.success) {
+                currentMember = result.member;
+                showAlert('success', '✅ Verification Successful! Generating your ID card...');
+
+                // Wait a moment for the user to see the success message
+                setTimeout(async () => {
+                    await generateAndShowIDCard(currentMember);
+                }, 1000);
+            } else {
+                showAlert('error', `❌ ${result.error}`);
+            }
+        });
+
+        async function generateAndShowIDCard(member) {
+            try {
+                // Hide verification section
+                document.getElementById('verificationSection').style.display = 'none';
+                
+                // Show ID card section
+                document.getElementById('idcardSection').style.display = 'block';
+
+                // Initialize ID card generator
+                idCardGen = new IDCardGenerator('idCardCanvas');
+
+                // Generate ID card
+                await idCardGen.generateIDCard(member);
+
+                // Scroll to ID card
+                document.getElementById('idcardSection').scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                console.error('Error generating ID card:', error);
+                showAlert('error', 'Failed to generate ID card. Please try again.');
+                resetForm();
+            }
+        }
+
+        function downloadIDCard() {
+            if (idCardGen && currentMember) {
+                const filename = `${currentMember.userId}_IDCard.png`;
+                idCardGen.downloadIDCard(filename);
+                
+                showAlert('success', '✅ ID Card downloaded successfully!');
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('verificationForm').reset();
+            document.getElementById('verificationSection').style.display = 'block';
+            document.getElementById('idcardSection').style.display = 'none';
+            document.getElementById('alertBox').style.display = 'none';
+            currentMember = null;
+            idCardGen = null;
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showAlert(type, message) {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.className = 'alert alert-' + type;
+            alertBox.innerHTML = message;
+            alertBox.style.display = 'block';
+
+            // Scroll to alert
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>

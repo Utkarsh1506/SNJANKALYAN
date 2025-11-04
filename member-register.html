@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Registration - SNJ Ankalyan</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .registration-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #3498DB;
+        }
+        .form-header h2 {
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #2C3E50;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .form-group label .required {
+            color: #E74C3C;
+        }
+        .form-control {
+            border: 2px solid #ECF0F1;
+            border-radius: 5px;
+            padding: 12px;
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            border-color: #3498DB;
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+        .btn-submit {
+            background: linear-gradient(135deg, #3498DB, #2C3E50);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        .photo-upload {
+            border: 2px dashed #3498DB;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            background: #F8F9FA;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .photo-upload:hover {
+            background: #ECF0F1;
+        }
+        .photo-preview {
+            max-width: 200px;
+            max-height: 200px;
+            margin: 10px auto;
+            display: none;
+        }
+        .photo-preview img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .alert-success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
+        .alert-error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
+        .alert-info {
+            background: #D1ECF1;
+            color: #0C5460;
+            border: 1px solid #BEE5EB;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="registration-container">
+            <div class="form-header">
+                <h2>Member Registration</h2>
+                <p class="text-muted">Join SNJ Ankalyan Community</p>
+            </div>
+
+            <div id="alertBox" class="alert"></div>
+
+            <form id="memberForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Full Name <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>S/O, D/O, W/O <span class="required">*</span></label>
+                            <input type="text" class="form-control" id="sonof" name="sonof" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Date of Birth <span class="required">*</span></label>
+                            <input type="date" class="form-control" id="dob" name="dob" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Gender <span class="required">*</span></label>
+                            <select class="form-control" id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Blood Group <span class="required">*</span></label>
+                            <select class="form-control" id="bloodGroup" name="bloodGroup" required>
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Mobile Number <span class="required">*</span></label>
+                            <input type="tel" class="form-control" id="mobile" name="mobile" 
+                                   pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label>Address <span class="required">*</span></label>
+                    <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Photo (Optional)</label>
+                    <div class="photo-upload" onclick="document.getElementById('photo').click()">
+                        <p>📷 Click to upload photo</p>
+                        <p class="text-muted small">Recommended: Passport size photo</p>
+                        <input type="file" id="photo" name="photo" accept="image/*" style="display: none;">
+                    </div>
+                    <div class="photo-preview" id="photoPreview">
+                        <img id="photoImg" src="" alt="Photo Preview">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Registration</button>
+            </form>
+
+            <div style="margin-top: 30px; text-align: center;">
+                <p class="text-muted">Already registered? <a href="idcard-download.html">Download your ID Card</a></p>
+                <p class="text-muted"><a href="index.html">← Back to Home</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/member-system.js"></script>
+    <script>
+        let photoData = '';
+
+        // Handle photo upload
+        document.getElementById('photo').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    photoData = event.target.result;
+                    document.getElementById('photoImg').src = photoData;
+                    document.getElementById('photoPreview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('memberForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                sonof: document.getElementById('sonof').value,
+                dob: document.getElementById('dob').value,
+                gender: document.getElementById('gender').value,
+                bloodGroup: document.getElementById('bloodGroup').value,
+                mobile: document.getElementById('mobile').value,
+                email: document.getElementById('email').value,
+                address: document.getElementById('address').value,
+                photo: photoData
+            };
+
+            // Register member
+            const result = memberSystem.registerMember(formData);
+
+            if (result.success) {
+                showAlert('success', 
+                    `Registration Successful! 🎉<br>
+                    Your User ID is: <strong>${result.userId}</strong><br>
+                    Please save this ID for future reference.<br>
+                    Your application is pending approval. Once approved, you can download your ID card.`
+                );
+
+                // Reset form
+                document.getElementById('memberForm').reset();
+                photoData = '';
+                document.getElementById('photoPreview').style.display = 'none';
+
+                // Scroll to alert
+                document.getElementById('alertBox').scrollIntoView({ behavior: 'smooth' });
+
+                // Redirect after 5 seconds
+                setTimeout(() => {
+                    window.location.href = 'idcard-download.html';
+                }, 5000);
+            } else {
+                showAlert('error', `Registration Failed: ${result.error}`);
+            }
+        });
+
+        function showAlert(type, message) {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.className = 'alert alert-' + type;
+            alertBox.innerHTML = message;
+            alertBox.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

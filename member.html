@@ -1,0 +1,579 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Member Application - SNJANKALYAN</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- header (copied from index.html) -->
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-lg-8">
+                            <div class="short_contact_list">
+                                <ul>
+                                    <li><a href="+919058398880"> <i class="fa fa-phone"></i> +91 90583 98880</a></li>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>s.nautiyalpabo@gmail.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-lg-4">
+                            <div class="social_media_links d-none d-lg-block">
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-pinterest-p"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <h2>SNJANKALYAN</h2>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="About.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                        <!-- Mobile-only menu items -->
+                                        <li class="d-lg-none"><a href="member-login.html">👤 Member Login</a></li>
+                                        <li class="d-lg-none"><a href="admin-login.html">🛡️ Admin Login</a></li>
+                                        <li class="d-lg-none"><a href="donate.html">💚 Make Donation</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a data-scroll-nav='1' href="donate.html">Make Donation</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- member registration form -->
+    <div class="section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_title text-center mb-4">
+                        <h3><span>Member Application</span></h3>
+                        <p>Please fill the form below to apply for membership.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div id="alertBox" class="alert" style="display:none;padding:15px;margin-bottom:20px;border-radius:5px;"></div>
+                    <form id="memberForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="fullName">Name *</label>
+                                <input id="fullName" name="name" class="form-control" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Gender *</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male" required>
+                                        <label class="form-check-label" for="genderMale">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female">
+                                        <label class="form-check-label" for="genderFemale">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="dob">Date of Birth *</label>
+                                <input id="dob" name="dob" type="text" class="form-control" placeholder="dd-mm-yyyy" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="sonOf">S/O</label>
+                                <input id="sonOf" name="sonof" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="profession">Profession</label>
+                                <select id="profession" name="profession" class="form-control">
+                                    <option value="">Select Profession</option>
+                                    <option>Farmer</option>
+                                    <option>Teacher</option>
+                                    <option>Business</option>
+                                    <option>Student</option>
+                                    <option>Retired</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="blood">Blood Group *</label>
+                                <select id="blood" name="blood" class="form-control" required>
+                                    <option value="">Select Blood Group</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="state">State *</label>
+                                <select id="state" name="state" class="form-control" required>
+                                    <option value="">Select State</option>
+                                    <option>Uttarakhand</option>
+                                    <option>Uttar Pradesh</option>
+                                    <option>Delhi</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="district">District *</label>
+                                <input id="district" name="district" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="mobile">Mobile No. *</label>
+                                <input id="mobile" name="mobile" type="tel" class="form-control" placeholder="Mobile Number" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="aadhar">Aadhar No. *</label>
+                                <input id="aadhar" name="aadhar" class="form-control" placeholder="Aadhar No." required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <textarea id="address" name="address" rows="2" class="form-control" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="pincode">Pin Code *</label>
+                                <input id="pincode" name="pincode" class="form-control" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="profilePic">Profile Picture</label>
+                                <input id="profilePic" name="profile_pic" type="file" accept="image/*" class="form-control-file">
+                                <img id="profilePreview" src="" style="max-width:120px;display:none;margin-top:8px;border:1px solid #ddd;padding:4px;">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="idSelect">Select Your ID</label>
+                                <input id="idSelect" name="id_doc" type="file" class="form-control-file">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="otherDoc">Other Document</label>
+                                <input id="otherDoc" name="other_doc" type="file" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- Donation required before application -->
+                        <div class="card mb-3 p-3">
+                            <h5>Donation (required to complete application)</h5>
+                            <div class="row align-items-center mb-3">
+                                <div class="col-md-4 text-center">
+                                    <!-- UPI QR will be generated here from the UPI ID -->
+                                    <div id="upiQr" style="max-width:150px;margin:0 auto;padding:8px;background:#fff;border:1px solid #eee;"></div>
+                                </div>
+                                <div class="col-md-8">
+                                    <p><strong>Scan to pay using UPI</strong></p>
+                                    <p><strong>UPI ID:</strong> <span id="upiId">9837503582@sbi</span></p>
+                                    <p class="small text-muted">After payment, enter the UTR and upload the screenshot below.</p>   
+                                </div>
+                            </div>
+                            <div class="form-row align-items-end">
+                                <div class="form-group col-md-4">
+                                    <label for="member_amount">Amount (INR)</label>
+                                    <input id="member_amount" name="member_amount" type="number" min="1" class="form-control" placeholder="Enter amount" required>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <label>Quick select</label>
+                                    <div class="d-flex gap-2">
+                                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('member_amount').value=100">₹100</button>
+                                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('member_amount').value=500">₹500</button>
+                                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="document.getElementById('member_amount').value=1000">₹1000</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="member_utr">UTR / Transaction No. *</label>
+                                    <input id="member_utr" name="member_utr" type="text" class="form-control" placeholder="Enter UTR / transaction reference" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="member_screenshot">Upload payment screenshot (PNG/JPG) *</label>
+                                    <input id="member_screenshot" name="member_screenshot" type="file" accept="image/*" class="form-control-file" required>
+                                    <div class="mt-2">
+                                        <img id="memberScreenshotPreview" src="" alt="Screenshot preview" style="max-width:160px;display:none;border:1px solid #ddd;padding:6px;border-radius:4px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group text-center mt-3">
+                            <button type="submit" class="boxed-btn4">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer (copied from index.html) -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4 ">
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <h1>SNJANKALYAN</H4>
+                                </a>
+                            </div>
+                            <p class="address_text">Jan Kalyan Samiti, <br> Paabo Paudi Garhwal, <br> Uttarakhand, India
+                            </p>
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Services</h3>
+                            <ul class="links">
+                                <li><a href="#">Donate</a></li>
+                                <li><a href="#">Campaigns</a></li>
+                                <li><a href="#">Member Apply</a></li>
+                                <li><a href="#">Volunteer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Contacts</h3>
+                            <div class="contacts">
+                                <p>+91 90583 98880<br>
+                                    s.nautiyalpabo@gmail.com <br>
+                                    Main Market Pabau, Po-Pabau, Patti- Ghurdaursyun, Pauri Garhwal Uttarakhand 246164
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">Agreements</h3>
+                            <ul class="news_links">
+                                <li>
+                                    <div class="info">
+                                        <a href="#"><h4>Terms & Condition</h4></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info">
+                                        <a href="#"><h4>Privacy Policy</h4></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info">
+                                        <a href="#"><h4>Disclaimer</h4></a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info">
+                                        <a href="#"><h4>Refund Policy</h4></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px "></div>
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                        <p>
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | JANKALYAN
+                        </p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/member-system.js"></script>
+
+    <!-- QRCode library (lightweight) -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
+    <script>
+    // Generate UPI QR from UPI ID shown on the page, but prefer a custom image at img/upi_qr.png if present
+    (function(){
+        var upiEl = document.getElementById('upiId');
+        var qrContainer = document.getElementById('upiQr');
+        if (!upiEl || !qrContainer) return;
+        var upiId = upiEl.textContent.trim();
+        if (!upiId) return;
+        var payeeName = encodeURIComponent('SNJANKALYAN');
+        var upiUri = 'upi://pay?pa=' + encodeURIComponent(upiId) + '&pn=' + payeeName;
+
+        // Try to load a custom image first
+        var img = new Image();
+        img.alt = 'UPI QR';
+        img.style.maxWidth = '150px';
+        img.style.border = '1px solid #eee';
+        img.style.padding = '8px';
+        img.onload = function(){
+            // custom image exists and loaded, use it
+            qrContainer.innerHTML = '';
+            qrContainer.appendChild(img);
+        };
+        img.onerror = function(){
+            // If webp failed, try png. If png also fails, fallback to QR generation or plain text.
+            var src = img.src || '';
+            if (src.indexOf('.jpg') !== -1) {
+                img.src = 'img/upi_qr.jpg';
+                return;
+            }
+            // fallback: generate QR if library available, otherwise show plain UPI ID
+            if (typeof QRCode !== 'undefined' && QRCode.toCanvas) {
+                QRCode.toCanvas(qrContainer, upiUri, { width: 240 }, function (error) {
+                    if (error) qrContainer.innerText = upiId;
+                });
+            } else {
+                qrContainer.innerText = upiId;
+            }
+        };
+        // start loading custom image (prefer webp, then png)
+        img.src = 'img/upi_qr.jpg';
+    })();
+    </script>
+
+    <script>
+    // Profile preview
+    (function(){
+        var prof = document.getElementById('profilePic');
+        var prev = document.getElementById('profilePreview');
+        if (!prof) return;
+        prof.addEventListener('change', function(){
+            var file = prof.files && prof.files[0];
+            if (!file) { prev.style.display='none'; prev.src=''; return; }
+            if (!file.type.match('image.*')) { alert('Please upload an image for profile.'); prof.value=''; return; }
+            var reader = new FileReader();
+            reader.onload = function(e){ prev.src = e.target.result; prev.style.display='block'; }
+            reader.readAsDataURL(file);
+        });
+    })();
+
+    // Member screenshot preview
+    (function(){
+        var ms = document.getElementById('member_screenshot');
+        var mprev = document.getElementById('memberScreenshotPreview');
+        if (!ms) return;
+        ms.addEventListener('change', function(){
+            var f = ms.files && ms.files[0];
+            if (!f) { mprev.style.display='none'; mprev.src=''; return; }
+            if (!f.type.match('image.*')) { alert('Please upload an image for payment screenshot.'); ms.value=''; return; }
+            var r = new FileReader(); r.onload = function(e){ mprev.src = e.target.result; mprev.style.display='block'; }
+            r.readAsDataURL(f);
+        });
+    })();
+
+    // Basic validation including donation requirement
+    document.getElementById('memberForm').addEventListener('submit', function(e){
+        e.preventDefault(); // Prevent default form submission
+
+        var name = document.getElementById('fullName').value.trim();
+        var gender = document.querySelector('input[name="gender"]:checked');
+        var dob = document.getElementById('dob').value.trim();
+        var sonof = document.getElementById('sonOf').value.trim();
+        var blood = document.getElementById('blood').value;
+        var mobile = document.getElementById('mobile').value.trim();
+        var aadhar = document.getElementById('aadhar').value.trim();
+        var address = document.getElementById('address').value.trim();
+        var pincode = document.getElementById('pincode').value.trim();
+        var email = document.getElementById('email').value.trim();
+        var amount = document.getElementById('member_amount').value;
+        var utr = document.getElementById('member_utr').value.trim();
+        var screenshot = document.getElementById('member_screenshot').files[0];
+        var profilePic = document.getElementById('profilePic').files[0];
+
+        if (!name) { showAlert('error', 'Name is required'); return false; }
+        if (!gender) { showAlert('error', 'Please select gender'); return false; }
+        if (!dob) { showAlert('error', 'Date of Birth is required'); return false; }
+        if (!blood) { showAlert('error', 'Blood group is required'); return false; }
+        if (!mobile) { showAlert('error', 'Mobile number is required'); return false; }
+        if (!aadhar) { showAlert('error', 'Aadhar number is required'); return false; }
+        if (!address) { showAlert('error', 'Address is required'); return false; }
+
+        // Donation checks
+        if (!amount || Number(amount) <= 0) { showAlert('error', 'Please enter a valid donation amount.'); return false; }
+        if (!utr) { showAlert('error', 'Please enter the UTR / transaction number.'); return false; }
+        if (!screenshot) { showAlert('error', 'Please upload the payment screenshot.'); return false; }
+
+        // Process photo and screenshot
+        var photoData = '';
+        var screenshotData = '';
+        
+        var processFiles = Promise.all([
+            profilePic ? readFileAsDataURL(profilePic) : Promise.resolve(''),
+            readFileAsDataURL(screenshot)
+        ]);
+
+        processFiles.then(function(results) {
+            photoData = results[0];
+            screenshotData = results[1];
+
+            // Prepare member data
+            var memberData = {
+                name: name,
+                gender: gender.value,
+                dob: dob,
+                sonof: sonof,
+                bloodGroup: blood,
+                mobile: mobile,
+                aadhar: aadhar,
+                address: address,
+                pincode: pincode,
+                email: email,
+                photo: photoData,
+                paymentAmount: amount,
+                paymentUTR: utr,
+                paymentScreenshot: screenshotData,
+                paymentStatus: 'pending',
+                paymentDate: new Date().toISOString()
+            };
+
+            // Register member
+            var result = memberSystem.registerMember(memberData);
+
+            if (result.success) {
+                showAlert('success', 
+                    'Registration Successful! 🎉<br>' +
+                    'Your User ID is: <strong>' + result.userId + '</strong><br>' +
+                    'Payment Amount: ₹' + amount + '<br>' +
+                    'Please save this ID for future reference.<br>' +
+                    'Your application is pending admin approval.'
+                );
+
+                // Reset form
+                document.getElementById('memberForm').reset();
+                document.getElementById('profilePreview').style.display = 'none';
+                document.getElementById('memberScreenshotPreview').style.display = 'none';
+
+                // Scroll to alert
+                document.getElementById('alertBox').scrollIntoView({ behavior: 'smooth' });
+
+                // Redirect after 5 seconds
+                setTimeout(function() {
+                    window.location.href = 'member-login.html';
+                }, 5000);
+            } else {
+                showAlert('error', 'Registration Failed: ' + result.error);
+            }
+        }).catch(function(error) {
+            showAlert('error', 'Error processing files: ' + error.message);
+        });
+    });
+
+    function readFileAsDataURL(file) {
+        return new Promise(function(resolve, reject) {
+            var reader = new FileReader();
+            reader.onload = function(e) { resolve(e.target.result); };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    }
+
+    function showAlert(type, message) {
+        var alertBox = document.getElementById('alertBox');
+        alertBox.className = 'alert alert-' + type;
+        alertBox.style.background = type === 'success' ? '#D4EDDA' : '#F8D7DA';
+        alertBox.style.color = type === 'success' ? '#155724' : '#721C24';
+        alertBox.style.border = type === 'success' ? '1px solid #C3E6CB' : '1px solid #F5C6CB';
+        alertBox.innerHTML = message;
+        alertBox.style.display = 'block';
+    }
+    </script>
+
+</body>
+
+</html>

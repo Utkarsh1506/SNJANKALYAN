@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - SNJ Ankalyan</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800|Yeseva+One&display=swap");
+        
+        body {
+            background: linear-gradient(135deg, #24c0f1 0%, #4c9afe 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Open Sans", sans-serif;
+        }
+        .login-container {
+            max-width: 450px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .login-header {
+            background: linear-gradient(90deg, #24c0f1 0%, #4c9afe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .login-header h2 {
+            margin: 0;
+            font-size: 28px;
+            font-family: "Yeseva One", cursive;
+        }
+        .login-header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        .login-body {
+            padding: 40px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #191d34;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .form-control {
+            border: 2px solid #ECF0F1;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            border-color: #24c0f1;
+            box-shadow: 0 0 0 0.2rem rgba(36, 192, 241, 0.25);
+            outline: none;
+        }
+        .btn-login {
+            background: linear-gradient(90deg, #24c0f1 0%, #4c9afe 100%);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+            box-shadow: 0 5px 20px rgba(36, 192, 241, 0.3);
+        }
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(36, 192, 241, 0.4);
+        }
+        .alert {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .alert-error {
+            background: #F8D7DA;
+            color: #721C24;
+            border: 1px solid #F5C6CB;
+        }
+        .alert-success {
+            background: #D4EDDA;
+            color: #155724;
+            border: 1px solid #C3E6CB;
+        }
+        .login-footer {
+            text-align: center;
+            padding: 20px;
+            background: #F8F9FA;
+            border-top: 1px solid #ECF0F1;
+        }
+        .login-footer a {
+            color: #24c0f1;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+        .password-toggle {
+            position: relative;
+        }
+        .password-toggle .toggle-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #7F8C8D;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .info-box {
+            background: #E8F4F8;
+            border-left: 4px solid #3498DB;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .info-box p {
+            margin: 0;
+            color: #2C3E50;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2>🛡️ Admin Login</h2>
+            <p>SNJ Ankalyan Management Panel</p>
+        </div>
+
+        <div class="login-body">
+            <div id="alertBox" class="alert"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" 
+                           placeholder="Enter email address" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="password-toggle">
+                        <input type="password" class="form-control" id="password" name="password" 
+                               placeholder="Enter password" required>
+                        <button type="button" class="toggle-btn" onclick="togglePassword()">👁️</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    🔐 Login to Dashboard
+                </button>
+            </form>
+        </div>
+
+        <div class="login-footer">
+            <p><a href="index.html">← Back to Home</a></p>
+            <p><a href="member-login.html">Member Login</a></p>
+        </div>
+    </div>
+
+    <script src="js/auth-system.js"></script>
+    <script>
+        // Check if already logged in
+        if (authSystem.isAdminLoggedIn()) {
+            window.location.href = 'admin-panel.html';
+        }
+
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            const toggleBtn = document.querySelector('.toggle-btn');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                toggleBtn.textContent = '🙈';
+            } else {
+                passwordField.type = 'password';
+                toggleBtn.textContent = '👁️';
+            }
+        }
+
+        // Handle login form
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                showAlert('error', 'Please enter both email and password');
+                return;
+            }
+
+            const result = authSystem.adminLogin(email, password);
+
+            if (result.success) {
+                showAlert('success', 'Login successful! Redirecting...');
+                setTimeout(function() {
+                    window.location.href = 'admin-panel.html';
+                }, 1000);
+            } else {
+                showAlert('error', result.error || 'Login failed');
+            }
+        });
+
+        function showAlert(type, message) {
+            const alertBox = document.getElementById('alertBox');
+            alertBox.className = 'alert alert-' + type;
+            alertBox.innerHTML = message;
+            alertBox.style.display = 'block';
+
+            if (type === 'success') {
+                setTimeout(function() {
+                    alertBox.style.display = 'none';
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>

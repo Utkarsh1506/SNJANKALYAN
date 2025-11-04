@@ -1,0 +1,543 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>ID Card Download - SNJANKALYAN</title>
+  <meta name="description" content="Download your member ID card">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/themify-icons.css">
+  <link rel="stylesheet" href="css/nice-select.css">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/gijgo.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/slicknav.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+  <style>
+    /* small tweak for the form area */
+    .idcard-area { padding: 80px 0; }
+    .idcard-box { max-width: 680px; margin: 0 auto; background: #fff; padding: 30px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+  </style>
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+
+  <!-- header-start -->
+  <header>
+    <div class="header-area ">
+      <div class="header-top_area">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-6 col-md-12 col-lg-8">
+              <div class="short_contact_list">
+                <ul>
+                  <li><a href="+919058398880"> <i class="fa fa-phone"></i> +91 90583 98880</a></li>
+                  <li><a href="#"> <i class="fa fa-envelope"></i>s.nautiyalpabo@gmail.com</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-6 col-md-6 col-lg-4">
+              <div class="social_media_links d-none d-lg-block">
+                <a href="#">
+                  <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-pinterest-p"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sticky-header" class="main-header-area">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-xl-3 col-lg-3">
+              <div class="logo">
+                <a href="index.html">
+                  <h2>SNJANKALYAN</h2>
+                </a>
+              </div>
+            </div>
+            <div class="col-xl-9 col-lg-9">
+              <div class="main-menu">
+                <nav>
+                  <ul id="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a>
+                      <ul class="submenu">
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="">Our Team</a></li>
+                        <li><a href="">Certifications</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="idcard.html">ID Card Download</a>
+                    </li>
+                    <li><a href="#">More Pages<i class="ti-angle-down"></i></a>
+                      <ul class="submenu">
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">List Of Donors</a></li>
+                        <li><a href="#">Your Problems</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <!-- Mobile-only menu items -->
+                    <li class="d-lg-none"><a href="member-login.html">👤 Member Login</a></li>
+                    <li class="d-lg-none"><a href="admin-login.html">🛡️ Admin Login</a></li>
+                    <li class="d-lg-none"><a href="donate.html">💚 Make Donation</a></li>
+                  </ul>
+                </nav>
+                <div class="Appointment">
+                  <div class="book_btn d-none d-lg-block">
+                    <a href="donate.html">Make Donation</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="mobile_menu d-block d-lg-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header-end -->
+
+  <!-- idcard area -->
+  <div class="idcard-area section_padding">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="idcard-box">
+            <h3 class="mb-3">Download Your Member ID Card</h3>
+            <p>Enter the User ID you received after registration and your Date of Birth (used as password). You can preview your ID card before downloading.</p>
+            
+            <form id="idcardForm" method="post" class="mt-4">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="userid" class="form-label">User ID</label>
+                  <input id="userid" name="userid" class="form-control" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="dob" class="form-label">Date of Birth</label>
+                  <input id="dob" name="dob" class="form-control" placeholder="e.g. 01-01-1990" required>
+                </div>
+              </div>
+              <div class="btn-group mb-3" role="group">
+                <button type="button" class="btn btn-info" onclick="previewIDCard()">Preview ID Card</button>
+                <button type="submit" formaction="idcard.php" class="btn btn-primary">Download ID Card (PNG)</button>
+              </div>
+            </form>
+
+            <!-- Preview Canvas -->
+            <div id="previewSection" style="display:none;" class="mt-4">
+              <hr>
+              <h4>ID Card Preview</h4>
+              <div class="card p-3 bg-light">
+                <canvas id="idCardCanvas" style="max-width:100%; border:2px solid #ddd; background:white;"></canvas>
+                <div class="mt-3">
+                  <button class="btn btn-success" onclick="downloadCanvasAsImage()">Download Preview (PNG)</button>
+                  <button class="btn btn-secondary" onclick="document.getElementById('previewSection').style.display='none'">Close Preview</button>
+                </div>
+              </div>
+            </div>
+
+            <hr class="mt-4">
+            <p class="text-muted small">If you haven't submitted your membership application, go to <a href="member.html">Member Application</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Fetch member data and render ID card on canvas
+    async function previewIDCard() {
+      const userid = document.getElementById('userid').value.trim();
+      const dob = document.getElementById('dob').value.trim();
+      
+      if (!userid || !dob) {
+        alert('Please enter both User ID and Date of Birth');
+        return;
+      }
+
+      try {
+        // Fetch member data via an AJAX request
+        const formData = new FormData();
+        formData.append('userid', userid);
+        formData.append('dob', dob);
+        formData.append('action', 'fetch');
+
+        const response = await fetch('idcard_data.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch member data');
+        }
+
+        const data = await response.json();
+        
+        if (data.error) {
+          alert(data.error);
+          return;
+        }
+
+        // Render ID card on canvas
+        renderIDCard(data);
+        document.getElementById('previewSection').style.display = 'block';
+
+      } catch (error) {
+        alert('Error: ' + error.message);
+      }
+    }
+
+    function renderIDCard(member) {
+      const canvas = document.getElementById('idCardCanvas');
+      const ctx = canvas.getContext('2d');
+      
+      // Set canvas dimensions
+      canvas.width = 1050;
+      canvas.height = 600;
+
+      // Colors
+      const headerBg = '#2980b9';
+      const white = '#ffffff';
+      const textDark = '#2c3e50';
+      const textLight = '#7f8c8d';
+      const borderColor = '#bdc3c7';
+
+      // Background
+      ctx.fillStyle = white;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Border
+      ctx.strokeStyle = borderColor;
+      ctx.lineWidth = 2;
+      ctx.strokeRect(5, 5, canvas.width - 10, canvas.height - 10);
+
+      // Header
+      ctx.fillStyle = headerBg;
+      ctx.fillRect(0, 0, canvas.width, 120);
+
+      // Organization name
+      ctx.fillStyle = white;
+      ctx.font = 'bold 32px Arial';
+      ctx.fillText('SNJANKALYAN', 30, 65);
+      ctx.font = '12px Arial';
+      ctx.fillText('Jan Kalyan Samiti - Member ID Card', 30, 95);
+
+      // Photo placeholder
+      const photoX = 40;
+      const photoY = 150;
+      const photoW = 180;
+      const photoH = 220;
+      
+      ctx.strokeStyle = borderColor;
+      ctx.lineWidth = 2;
+      ctx.strokeRect(photoX, photoY, photoW, photoH);
+
+      // Try to load profile photo
+      if (member.profile_pic) {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = function() {
+          ctx.drawImage(img, photoX, photoY, photoW, photoH);
+        };
+        img.onerror = function() {
+          // Fallback: no photo placeholder
+          ctx.fillStyle = '#f0f0f0';
+          ctx.fillRect(photoX, photoY, photoW, photoH);
+          ctx.fillStyle = textLight;
+          ctx.font = '14px Arial';
+          ctx.fillText('No Photo', photoX + 50, photoY + 110);
+        };
+        img.src = member.profile_pic;
+      } else {
+        ctx.fillStyle = '#f0f0f0';
+        ctx.fillRect(photoX, photoY, photoW, photoH);
+        ctx.fillStyle = textLight;
+        ctx.font = '14px Arial';
+        ctx.fillText('No Photo', photoX + 50, photoY + 110);
+      }
+
+      // Member details
+      const detailsX = 260;
+      let y = 160;
+
+      // Name
+      ctx.fillStyle = textLight;
+      ctx.font = '14px Arial';
+      ctx.fillText('Name:', detailsX, y);
+      ctx.fillStyle = textDark;
+      ctx.font = 'bold 20px Arial';
+      ctx.fillText((member.name || '').toUpperCase(), detailsX, y + 30);
+
+      // Member ID
+      y += 75;
+      ctx.fillStyle = textLight;
+      ctx.font = '14px Arial';
+      ctx.fillText('Member ID:', detailsX, y);
+      ctx.fillStyle = textDark;
+      ctx.font = 'bold 16px Arial';
+      ctx.fillText(member.userid || '', detailsX + 130, y);
+
+      // Gender & Blood Group
+      y += 45;
+      ctx.fillStyle = textLight;
+      ctx.font = '14px Arial';
+      ctx.fillText('Gender:', detailsX, y);
+      ctx.fillStyle = textDark;
+      ctx.font = '16px Arial';
+      ctx.fillText(member.gender || '', detailsX + 130, y);
+      
+      ctx.fillStyle = textLight;
+      ctx.font = '14px Arial';
+      ctx.fillText('Blood:', detailsX + 350, y);
+      ctx.fillStyle = textDark;
+      ctx.font = '16px Arial';
+      ctx.fillText(member.blood || '', detailsX + 450, y);
+
+      // Date of Birth
+      y += 45;
+      ctx.fillStyle = textLight;
+      ctx.font = '14px Arial';
+      ctx.fillText('Date of Birth:', detailsX, y);
+      ctx.fillStyle = textDark;
+      ctx.font = '16px Arial';
+      ctx.fillText(member.dob || '', detailsX + 130, y);
+
+      // Mobile
+      y += 45;
+      ctx.fillStyle = textLight;
+      ctx.font = '14px Arial';
+      ctx.fillText('Mobile:', detailsX, y);
+      ctx.fillStyle = textDark;
+      ctx.font = '16px Arial';
+      ctx.fillText(member.mobile || '', detailsX + 130, y);
+
+      // Address
+      y += 45;
+      ctx.fillStyle = textLight;
+      ctx.font = '14px Arial';
+      ctx.fillText('Address:', detailsX, y);
+      ctx.fillStyle = textDark;
+      ctx.font = '13px Arial';
+      const address = (member.address || '') + ', ' + (member.district || '') + ', ' + (member.state || '');
+      const maxWidth = 450;
+      const words = address.split(' ');
+      let line = '';
+      let lineY = y;
+      
+      for (let i = 0; i < words.length; i++) {
+        const testLine = line + words[i] + ' ';
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && i > 0) {
+          ctx.fillText(line, detailsX + 130, lineY);
+          line = words[i] + ' ';
+          lineY += 25;
+        } else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line, detailsX + 130, lineY);
+
+      // Footer
+      ctx.fillStyle = textLight;
+      ctx.font = '10px Arial';
+      const today = new Date();
+      const dateStr = today.toLocaleDateString('en-GB');
+      ctx.fillText('Issued: ' + dateStr, 30, canvas.height - 25);
+      ctx.fillText('www.snjankalyan.org', canvas.width - 280, canvas.height - 25);
+    }
+
+    function downloadCanvasAsImage() {
+      const canvas = document.getElementById('idCardCanvas');
+      const userid = document.getElementById('userid').value.trim();
+      const link = document.createElement('a');
+      link.download = 'idcard_' + userid + '_preview.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+  </script>
+
+  <!-- footer_start  -->
+  <footer class="footer">
+    <div class="footer_top">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-md-6 col-lg-4 ">
+            <div class="footer_widget">
+              <div class="footer_logo">
+                <a href="#">
+                  <h1>SNJANKALYAN</H4>
+                </a>
+              </div>
+              <p class="address_text">Jan Kalyan Samiti, <br> Paabo Paudi Garhwal, <br> Uttarakhand, India
+                               
+              </p>
+              <div class="socail_links">
+                <ul>
+                  <li>
+                    <a href="#">
+                      <i class="ti-facebook"></i>
+                    </a>
+                  </li>
+                                    
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-xl-2 col-md-6 col-lg-2">
+            <div class="footer_widget">
+              <h3 class="footer_title">
+                Services
+              </h3>
+              <ul class="links">
+                <li><a href="#">Donate</a></li>
+                <li><a href="#">Campaigns</a></li>
+                <li><a href="#">Member Apply</a></li>
+                <li><a href="#">Volunteer</a></li>
+                <li><a href="#">ID Card Dwonload</a></li>
+                <li><a href="#">List Of Donors</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-lg-3">
+            <div class="footer_widget">
+              <h3 class="footer_title">
+                Contacts
+              </h3>
+              <div class="contacts">
+                <p>+91 90583 98880<br>
+                  s.nautiyalpabo@gmail.com <br>
+                  Main Market Pabau, Po-Pabau, Patti- Ghurdaursyun, Pauri Garhwal Uttarakhand 246164
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6 col-lg-3">
+            <div class="footer_widget">
+              <h3 class="footer_title">
+                Agreements
+              </h3>
+              <ul class="news_links">
+                <li>
+                                   
+                  <div class="info">
+                    <a href="#">
+                      <h4>Terms & Condition</h4>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                                    
+                  <div class="info">
+                    <a href="#">
+                      <h4>Privacy Policy</h4>
+                    </a>
+                                        
+                  </div>
+                </li>
+                <li>
+                                    
+                  <div class="info">
+                    <a href="#">
+                      <h4>Disclaimer</h4>
+                    </a>
+                                        
+                  </div>
+                </li>
+                <li>
+                                    
+                  <div class="info">
+                    <a href="#">
+                      <h4>Refund Policy</h4>
+                    </a>
+                                        
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copy-right_text">
+      <div class="container">
+        <div class="row">
+          <div class="bordered_1px "></div>
+          <div class="col-xl-12">
+            <p class="copy_right text-center">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | JANKALYAN | Developed with <i class="ti-heart" aria-hidden="true"></i> by <a
+                href="https://agnivridhiindia.com" target="_blank">Agnvridhi India</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer_end  -->
+
+  <!-- JS here -->
+  <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+  <script src="js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/ajax-form.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  <script src="js/imagesloaded.pkgd.min.js"></script>
+  <script src="js/scrollIt.js"></script>
+  <script src="js/jquery.scrollUp.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/nice-select.min.js"></script>
+  <script src="js/jquery.slicknav.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/gijgo.min.js"></script>
+  <!--contact js-->
+  <script src="js/contact.js"></script>
+  <script src="js/jquery.ajaxchimp.min.js"></script>
+  <script src="js/jquery.form.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/mail-script.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
